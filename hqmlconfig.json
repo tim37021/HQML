@@ -1,0 +1,12 @@
+{
+    "channel": "master",
+    "commit": "HEAD",
+    "packages": [
+        "core",
+        "controls"
+    ],
+    "src": [
+        "ui"
+    ],
+    "entry": "./ui/app.qml"
+}
