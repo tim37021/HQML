@@ -8,6 +8,16 @@ def dir_path(string):
     else:
         raise NotADirectoryError(string)
 
+def str2bool(v):
+    if isinstance(v, bool):
+       return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
 def build_argparser():
     parser = argparse.ArgumentParser(prog="hqml")
     subparsers = parser.add_subparsers(dest='function', help='help for subcommand')
@@ -18,7 +28,8 @@ def build_argparser():
     # create the parser for the "command_2" command
     parser_b = subparsers.add_parser('build', help='build project')
 
-    
+    parser_c = subparsers.add_parser('config', help='configure project settings')
+    parser_c.add_argument('--hot-reload', type=str2bool, help='hot reload')
 
     return parser
 
@@ -38,4 +49,9 @@ if __name__ == '__main__':
     if args.function == 'build':
         from build_project import build_project
         build_project()
-    
+
+    if args.function == "config":
+        if args.hot_reload != None:
+            print(args.hot_reload)
+        else:
+            print('Nothing to configure')
