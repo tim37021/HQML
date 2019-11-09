@@ -31,6 +31,8 @@ def build_argparser():
     parser_c = subparsers.add_parser('config', help='configure project settings')
     parser_c.add_argument('--hot-reload', type=str2bool, help='hot reload')
 
+    parser_d = subparsers.add_parser('update', help='update hqml')
+
     return parser
 
 if __name__ == '__main__':
@@ -55,3 +57,8 @@ if __name__ == '__main__':
             print(args.hot_reload)
         else:
             print('Nothing to configure')
+
+    if args.function == 'update':
+        import subprocess, os
+        toolchain_path = os.path.dirname(__file__)
+        subprocess.call(['git', 'pull'], cwd=toolchain_path)
