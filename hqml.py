@@ -59,6 +59,5 @@ if __name__ == '__main__':
             print('Nothing to configure')
 
     if args.function == 'update':
-        import subprocess, os
-        toolchain_path = os.path.dirname(__file__)
-        subprocess.call(['git', 'pull'], cwd=toolchain_path)
+        from version_control import update
+        update()
