@@ -35,7 +35,7 @@ def build_argparser():
 
     return parser
 
-if __name__ == '__main__':
+def main():
     import sys
     parser = build_argparser()
 
