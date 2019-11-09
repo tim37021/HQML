@@ -12,6 +12,11 @@ For a long time there's no good solution to implement fancy GUI, until everybody
 QML is a declarative language for designing user interface–centric applications. Inline JavaScript code handles imperative aspects. It should be treated as a new language rather than a hack on javascript.
 
 
+## Install
+```bash
+git clone --recursive https://github.com/tim37021/HQML
+```
+
 ## Usage
 hqml <create|build|channel|config>
 
