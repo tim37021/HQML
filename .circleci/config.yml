@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: python hqml update
+      - run: pip install -r qmlcore/requirements.txt
       - run: chmod 777 hqml
       - run: sudo ln -s `pwd`/hqml /usr/bin/hqml
       - run: mkdir test && cd test
