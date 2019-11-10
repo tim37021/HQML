@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/python:3.8.0
     steps:
@@ -8,11 +8,6 @@ jobs:
       - run: python hqml.py update
       - run: chmod 777 hqml
       - run: sudo ln -s `pwd`/hqml /usr/bin/hqml
-  test:
-    docker:
-      - image: circleci/python:3.8.0
-    steps:
-      - checkout
       - run: mkdir test && cd test
       - run: hqml create .
       - run: hqml build
@@ -20,5 +15,4 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
       - test
