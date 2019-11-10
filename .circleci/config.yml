@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.8.0
-      - image: hqml:1.0.0
     steps:
       - checkout
       - run: python hqml.py update
@@ -12,7 +11,6 @@ jobs:
   test:
     docker:
       - image: circleci/python:3.8.0
-      - image: hqml:1.0.0
     steps:
       - checkout
       - run: mkdir test && cd test
