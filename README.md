@@ -1,3 +1,5 @@
+Build and Test: [![CircleCI](https://circleci.com/gh/tim37021/HQML.svg?style=svg)](https://circleci.com/gh/tim37021/HQML)
+
 HQML
 =========
 HQML starts as a fork of PureQML that bring QML technology into web. PureQML is a QML to HTML/javscript translator. Almost everything should be done in QML. This approach is very good until project start to scale. HQML makes more steps further, providing interoperability to other frontend codebases and improve developers UX. With HQML, you are able to cleanly separate UI and backend stuff. UI developers can create their fancy widgets in QML, while backend developers can still choose their favorite languages and tools to implement complex logic.
