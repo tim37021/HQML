@@ -14,6 +14,15 @@ def create_project(path):
     with open(path+'/hqmlconfig.json', 'w') as f:
         f.write(config)
 
+    os.makedirs(path+'/ui')
+
+    with open(path+'/ui/app.qml', 'w') as f:
+        f.write(
+"""Rectangle {
+anchors.fill: context;
+color: "black";
+}""")
+
     #import subprocess
 
     #toolchain_path = os.path.dirname(__file__)
