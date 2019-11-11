@@ -1,7 +1,7 @@
 def create_project(path):
     import json
     import os
-
+    import sys
     
     config = json.dumps({
         'channel': 'master',     # hqml branch
@@ -14,8 +14,8 @@ def create_project(path):
     with open(path+'/hqmlconfig.json', 'w') as f:
         f.write(config)
 
-    import subprocess
+    #import subprocess
 
-    toolchain_path = os.path.dirname(__file__)
+    #toolchain_path = os.path.dirname(__file__)
 
-    subprocess.call(['python3', '%s/qmlcore/build'%toolchain_path, '--boilerplate'], cwd=path)
+    #subprocess.call([sys.executable, '%s/qmlcore/build'%toolchain_path, '--boilerplate'], cwd=path)

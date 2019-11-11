@@ -1,4 +1,4 @@
-import os, subprocess, json
+import os, subprocess, json, sys
 def check_exists(file):
     return os.path.isfile(file)
 
@@ -10,15 +10,12 @@ def build_project():
     with open('hqmlconfig.json', 'r') as f:
         config = json.load(f)
     
-    with open('.manifest', 'r') as f:
-        manifest = json.load(f)
-
+    manifest = {}
     manifest['sources'] = config['src']
 
     with open('.manifest', 'w') as f:
         f.write(json.dumps(manifest))
 
-
     toolchain_path = os.path.dirname(__file__)
-
-    subprocess.call(['python3', '%s/qmlcore/build'%toolchain_path])
+    subprocess.call([sys.executable, '%s/qmlcore/build'%toolchain_path])
+    os.remove('.manifest')
