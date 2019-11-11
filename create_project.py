@@ -19,8 +19,8 @@ def create_project(path):
     with open(path+'/ui/app.qml', 'w') as f:
         f.write(
 """Rectangle {
-anchors.fill: context;
-color: "black";
+    anchors.fill: context;
+    color: "black";
 }""")
 
     #import subprocess
