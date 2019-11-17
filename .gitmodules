@@ -3,4 +3,4 @@
 	url = https://github.com/tim37021/qmlcore
 [submodule "controls"]
 	path = controls
-	url = https://github.com/pureqml/controls
+	url = https://github.com/tim37021/controls
